@@ -4,8 +4,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
-const ENV      = require('./env');
-mongoose.connect(ENV.MONGODB_URI || MONGODB_URI);
+
+try {
+	const ENV = require('./env');
+} 
+
+mongoose.connect(ENV.MONGODB_URI);
 
 const users = require('./routes/users');
 
