@@ -4,11 +4,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
-
+const ENV;
 try {
-	const ENV = require('./env');
+	ENV = require('./env');
 } catch (ex) {
-    console.log(ex);
+    ENV = process.env;
 }
 
 mongoose.connect(ENV.MONGODB_URI);
