@@ -7,7 +7,9 @@ const mongoose = require('mongoose');
 
 try {
 	const ENV = require('./env');
-} 
+} catch (ex) {
+    console.log(ex);
+}
 
 mongoose.connect(ENV.MONGODB_URI);
 
