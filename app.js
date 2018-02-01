@@ -4,7 +4,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
-const ENV;
+let ENV;
+
 try {
 	ENV = require('./env');
 } catch (ex) {
